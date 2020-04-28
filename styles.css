@@ -1,0 +1,26 @@
+body {
+    background-image: linear-gradient(to right, rgb(102, 97, 102) ,rgb(17, 17, 20));
+}
+h1 {
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: rgb(199, 181, 204);
+
+}
+ 
+.content {   
+    background-image: linear-gradient(to right, rgb(128, 70, 128) ,rgb(61, 61, 92));
+    height: 670px;
+    width: 800px;
+    display: grid;
+    grid-template-columns: repeat(6, 120px);
+    grid-gap: 2%;
+    margin: auto;
+    padding: 1%;
+    
+}
+
+img {
+    width: 100%;
+    height: 150px;
+}
