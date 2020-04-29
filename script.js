@@ -1,8 +1,3 @@
-/*var pic =document.getElementById('test');
-
-pic.addEventListener('click', function(e){
-pic.src ="./img/pic7";
-})*/
 
 var deck = [1,2,3,4,5,6,7,8,9,10,11,12,1,2,3,4,5,6,7,8,9,10,11,12]
     .map ( p =>[p,Math.random()])
@@ -12,14 +7,17 @@ var deck = [1,2,3,4,5,6,7,8,9,10,11,12,1,2,3,4,5,6,7,8,9,10,11,12]
 console.log(deck);
 
 var img =document.getElementsByTagName('img');
+var endScore = document.getElementById('score');
+var score =0;
+var step =1;
+var p1,p2;
+var timer = null;
+
 
 for(let i=0; i <img.length; i++){
     img[i].src2 = 'img/pic' + deck[i] + '.jpg';
     
     }
-
-var step =1;
-var p1,p2;
 
 document.addEventListener('click', function(e){
 
@@ -39,23 +37,40 @@ document.addEventListener('click', function(e){
                 p2 = e.target;
                 step = 3;
             }
-
-            break;
+            timer = setTimeout(check, 900);
+            break; 
 
         case 3:
-            if (p1.src2==p2.src2){
-                p1.replaceWith( document.createElement('span'))
-                p2.replaceWith( document.createElement('span'))
-            }
+            
+            clearTimeout(timer);
+            check();
 
-            else{
-                p2.src = p1.src ='img/pic0.jpg';
-            }
-
-            step =1;
             break;
     }
-})
+   
+}); 
+
+function check(){
+    if (p1.src2==p2.src2){
+        p1.replaceWith( document.createElement('span'))
+        p2.replaceWith( document.createElement('span'))
+        score +=10;
+    }
+
+    else{
+        p2.src = p1.src ='img/pic0.jpg';
+        score = Math.max(0,score-2);
+    }
+    
+    step =1;
+    endScore.textContent =score;
+    if (document.getElementsByTagName('img').length==0){
+        endScore.textContent += "BIEN JOUÉ BG ! ";
+
+    }
+
+}
+        
 
 
      

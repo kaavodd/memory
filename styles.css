@@ -3,10 +3,10 @@ body {
    /* background-repeat: no-repeat;*/
 }
 
-h1 {
+h1, p {
     text-align: center;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    color: rgb(199, 181, 204);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: rgb(20, 19, 20);
 
 }
  
