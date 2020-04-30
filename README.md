@@ -12,6 +12,12 @@ Nous avons choisi le projet **Memory**.
 2. Lancer en localhost le fichier *index.html*
 3. A vous de jouer ! :tada:
 
+## Accéder ay projet en ligne :point_left:
+(plus rapide mais moins il y'a quelque lenteur dans l'éxécution du code)
+
+https://memory-jsgame.netlify.app/ :eyes:
+
+
 ## Règle du jeu :video_game:
 
 Le Memory comme son nom l'indique est un jeu de réflexion et de mémoire.
