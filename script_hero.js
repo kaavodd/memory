@@ -12,7 +12,34 @@ var score =0;
 var step =1;
 var p1,p2;
 var timer = null;
+function start_timer(){
+	var timer = document.getElementById("my_timer").innerHTML;
+	var arr = timer.split(":");
+	var hour = arr[0];
+	var min = arr[1];
+	var sec = arr[2];
+	if (sec ==0) {
+		if (min==0){
+			if (hour ==0){
+				alert("Time out");
+				window.location.reload()
+				return;
+			}
+			hour--;
+			min = 60;
+			if (hour < 10) hour = "0" + hour;
+		}
+		min--;
+		if (min < 10) min = "0" + min;
+		sec = 59;
+	}
+	else sec--;
 
+	if (sec < 10) sec ="0" + sec;
+
+	document.getElementById("my_timer").innerHTML = hour + ":" + min + ":" + sec;
+    setTimeout(start_timer, 1000);
+} 
 
 for(let i=0; i <img.length; i++){
 img[i].src2 = 'img2/pic' + deck[i] + '.jpg';
