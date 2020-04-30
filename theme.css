@@ -19,6 +19,9 @@ h1, p {
 .p_hero {
     color: rgb(231, 226, 219);
 }
+.p_jeu{
+    color: black;
+}
 .content {   
     height: 670px;
     width: 800px;

@@ -21,8 +21,7 @@ function start_timer(){
 	if (sec ==0) {
 		if (min==0){
 			if (hour ==0){
-				alert("Time out");
-				window.location.reload()
+				window.location.replace('index.html')
 				return;
 			}
 			hour--;

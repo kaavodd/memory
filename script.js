@@ -12,7 +12,33 @@ var score =0;
 var step =1;
 var p1,p2;
 var timer = null;
+function start_timer(){
+	var timer = document.getElementById("my_timer").innerHTML;
+	var arr = timer.split(":");
+	var hour = arr[0];
+	var min = arr[1];
+	var sec = arr[2];
+	if (sec ==0) {
+		if (min==0){
+			if (hour ==0){
+				window.location.replace('index.html')
+				return;
+            }
+			hour--;
+			min = 60;
+			if (hour < 10) hour = "0" + hour;
+		}
+		min--;
+		if (min < 10) min = "0" + min;
+		sec = 59;
+	}
+	else sec--;
 
+	if (sec < 10) sec ="0" + sec;
+
+	document.getElementById("my_timer").innerHTML = hour + ":" + min + ":" + sec;
+    setTimeout(start_timer, 1000);
+} 
 
 for(let i=0; i <img.length; i++){
     img[i].src2 = 'img/pic' + deck[i] + '.jpg';
@@ -37,14 +63,10 @@ document.addEventListener('click', function(e){
                 p2 = e.target;
                 step = 3;
             }
-            timer = setTimeout(check, 900);
             break; 
 
         case 3:
-            
-            clearTimeout(timer);
             check();
-
             break;
     }
    
@@ -66,7 +88,6 @@ function check(){
     endScore.textContent =score;
     if (document.getElementsByTagName('img').length==0){
         endScore.textContent += "BIEN JOUÉ BG ! ";
-
     }
 
 }
